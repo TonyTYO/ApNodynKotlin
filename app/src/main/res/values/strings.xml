@@ -1,0 +1,90 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">ApNodyn</string>
+
+    <string name="action_settings">Gosodiadau</string>
+    <string name="action_delete">Dileu</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="empty_string">Empty View</string>
+    <string name="settings_title">Gosodiadau</string>
+
+    <!--activity_main.xml-->
+    <string name="am_xmlCroeso">Croeso i Nodyn</string>
+    <string name="am_xmlDescrip">OneNote</string>
+    <string name="action_list">List</string>
+    <string name="action_add">Add</string>
+
+    <!--toolbar menu-->
+    <string name="menu_list">Pob nodyn</string>
+    <string name="menu_active">Nodiadau Cyfredol</string>
+    <string name="menu_visible">Nodiadau Gweledol</string>
+    <string name="menu_widget">Nodiadau teclun</string>
+    <string name="menu_add">Adio nodyn newydd</string>
+
+    <!--noteslists.kt-->
+    <string name="widget_title">Nodiadau Teclun</string>
+    <string name="currentvisiblenotes_title">Nodiadau Gweledol</string>
+    <string name="currentnotes_title">Nodiadau Cyfredol</string>
+    <string name="listnotes_title">Holl Nodiadau</string>
+    <string name="currenttext_title">Cyfredol</string>
+    <string name="batchdelete_title">Dileu Nodiadau</string>
+
+    <!--note_rv_item.xml-->
+    <string name="tv_note">Nodyn</string>
+    <string name="tv_extra">Manylion</string>
+    <string name="tv_activation">Dyddiad</string>
+    <string name="tv_updated_at">Diweddarwyd:</string>
+    <string name="im_description">Delete icon</string>
+    <string name="kt_lastupdated">Diweddarwyd : %1$s</string>
+
+    <!--activity_note_entry.xml-->
+    <string name="editnote_title">Adio/Diweddaru Nodyn</string>
+    <string name="note_name_hint">Nodyn</string>
+    <string name="note_desc_hint">Manylion Pellach</string>
+    <string name="activation_date_text">Dyddiad\nDangos</string>
+    <string name="activation_date_hint">dd-MM-yyyy</string>
+    <string name="arddangos_text">Arddangos</string>
+    <string name="amlygu_text">Amlygu</string>
+    <string name="btn_save">Cadw</string>
+    <string name="btn_deleted">%1s wedi ei ddileu</string>
+    <string name="btn_updated">Nodyn wedi ei ddiweddaru..</string>
+    <string name="btn_added">[%1s....] wedi ei gadw.</string>
+
+    <!--App Widget-->
+    <string name="app_widget_description">This is an app widget description</string>
+    <string name="title_activity_list_notes">ListNotes</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+
+    <string name="empty_view_text">Dim Nodiadau</string>
+    <string name="btn_batchdeleted">Nodiadau wedi eu dileu</string>
+
+    <!--ColourPicker-->
+    <!-- Default title for color picker dialog [CHAR LIMIT=30] -->
+    <string name="color_picker_default_title">Select a Color</string>
+    <!-- Content description for a color square. -->
+    <string name="color_swatch_description">Color <xliff:g example="14" id="color_index">%1$d</xliff:g></string>
+    <!-- Content description for a selected color square. -->
+    <string name="color_swatch_description_selected">Color <xliff:g example="14" id="color_index">%1$d</xliff:g> selected</string>
+    <string name="cp_lliwiau">Lliwiau</string>
+
+    <!--Settings-->
+    <string name="gosod_nifer">Gosod nifer nodiadau i arddangos</string>
+    <string name="gosod_lanlawr">Cliciwch + a - i newid y rhif</string>
+    <string name="gosod_lawr">-</string>
+    <string name="gosod_0">0</string>
+    <string name="gosod_lan">+</string>
+    <string name="gosod_lliw_amlygu">Gosod Lliw Amlygu</string>
+    <string name="gosod_dewislliw">Dewiswch un or lliwiau isod</string>
+    <string name="gosod_enghraifft">Nodyn bach pwysig</string>
+    <string name="gosod_ail_osod">Ail-osod Gwreiddiol</string>
+    <string name="gosod_cadw">Cadw</string>
+
+</resources>

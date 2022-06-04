@@ -1,0 +1,34 @@
+object ContactsRepository { 
+
+	private val contacts: MutableList<Contact> = mutableListOf( Contact(1, "John", "Doe"), 	Contact(2, "Billy", "Bob"), Contact(3, "Anton", "Potter") )
+
+	fun getFilteredContacts(name: String): LiveData<List<Contact>> { 
+		return MutableLiveData(contacts.filter 									{it.firstName.contains(name)||it.lastName.contains(name) })} 
+}
+
+override fun onViewCreated(view: View, savedInstanceState: Bundle?) { 
+	super.onViewCreated(view, savedInstanceState) 
+	subscribeObservers() 
+	list_contacts.adapter = mAdapter 	list_contacts.addItemDecoration(DividerItemDecoration(requireContext(), 						LinearLayoutManager.VERTICAL)) viewModel.name.value = "" } 
+
+	private fun subscribeObservers() { 
+		viewModel.getContactsMapFiltered().observe(viewLifecycleOwner, Observer 
+						{ if (it != null) { mAdapter.updateItems(it) } }) 
+}
+
+class ContactsViewModel : ViewModel() { 
+
+	val name: MutableLiveData<String> = MutableLiveData() 
+	private val contacts = getContactsSwitchMap() 
+
+	fun getContactsMapFiltered(): LiveData<List<ContactUi>> { 
+		return Transformations.map(contacts) { contactList -> 
+			val newContacts: MutableList<ContactUi> = mutableListOf() contactList.forEach 						{ newContacts.add(ContactUi(it.id, "${it.firstName} 											${it.lastName}")) } 			
+							newContacts } 
+	} 
+
+private fun getContactsSwitchMap(): LiveData<List<Contact>> { 
+	return Transformations.switchMap(name) { nameQuery -> 							ContactsRepository.getFilteredContacts(nameQuery) } } }
+
+
+

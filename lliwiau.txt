@@ -1,0 +1,34 @@
+#002CFE	RYB Blue
+#AC0000	Coch tywyll
+#064C1D	gwyrdd tywyll
+#7700CC	piws tywyll
+#000000	du
+
+#BA5000	oren tywyll
+#007C98	blue-green
+	
+
+
+
+
+
+
+#ffff4C (255, 76, 255) Nodyn
+
+    <string-array name="default_color_choice_values" translatable="false">
+        <item>#ff4444</item>
+        <item>#0099cc</item>
+        <item>#9933cc</item>
+        <item>#669900</item>
+        <item>#ff8800</item>
+        <item>#cc0000</item>
+    </string-array>
+
+    <string-array name="default_color_choice_names" translatable="false">
+        <item>coch golau</item>
+        <item>glas tywyll</item>
+        <item>piws tywyll</item>
+        <item>gwyrdd tywyll</item>
+        <item>oren tywyll</item>
+        <item>coch tywyll</item>
+    </string-array>

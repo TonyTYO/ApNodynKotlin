@@ -1,0 +1,5 @@
+viewModel.loadNote(id).observe(this) {
+	CoroutineScope(Dispatchers.IO).launch {
+		viewModel.updateNoteVisible(id, it.Visible)
+	}
+}

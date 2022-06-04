@@ -1,0 +1,42 @@
+    override fun onReceive(context: Context, intent: Intent) {
+        if (intent.action == TOAST_ACTION) {
+            val appWidgetId: Int = intent.getIntExtra(
+                AppWidgetManager.EXTRA_APPWIDGET_ID,
+                AppWidgetManager.INVALID_APPWIDGET_ID
+            )
+            // EXTRA_ITEM represents a custom value provided by the Intent
+            // passed to the setOnClickFillInIntent() method, to indicate which
+            // position of the item was clicked. See StackRemoteViewsFactory in
+            // Set the fill-in Intent for details.
+            val description: String? = intent.getStringExtra(EXTRA_ITEM)
+            Toast.makeText(context, "$description", Toast.LENGTH_LONG).show()
+        } else if (intent.action == SCHEDULED_UPDATE) {
+            val manager = AppWidgetManager.getInstance(context)
+            val ids = manager.getAppWidgetIds(ComponentName(context, StickyNote::class.java))
+            manager.notifyAppWidgetViewDataChanged(ids, R.id.stack_view)
+            onUpdate(context, manager, ids)
+            scheduleNextUpdate(context, 1)
+        } else if (intent.action == "GET_COUNT") {
+            count = intent.getIntExtra("Count", 0)
+            val views = RemoteViews(context.packageName, R.layout.sticky_note)
+            views.setTextViewText(R.id.widgetTitleLabel, count.toString())
+            Log.d("Receive", count.toString())
+        }
+        super.onReceive(context, intent)
+    }
+
+
+    override fun onDataSetChanged() {
+        // This is triggered when you call AppWidgetManager notifyAppWidgetViewDataChanged
+        // on the collection view corresponding to this factory. You can do heaving lifting in
+        // here, synchronously. For example, if you need to process an image, fetch something
+        // from the network, etc., it is ok to do it here, synchronously. The widget will remain
+        // in its current state while work is being done here, so you don't need to worry about
+        // locking up the widget.
+        reminders = dao.loadForWidget(getStartNextDateTime(), 10)
+        val localBroadcastManager: LocalBroadcastManager = LocalBroadcastManager.getInstance(mContext)
+        localBroadcastManager.registerReceiver(StickyNote(), IntentFilter("GET_COUNT"))
+        val localIntent: Intent = Intent("GET_COUNT")
+        localIntent.putExtra("Count", getCount())
+        localBroadcastManager.sendBroadcast(localIntent)
+    }

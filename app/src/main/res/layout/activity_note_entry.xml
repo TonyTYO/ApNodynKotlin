@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NoteEntry">
+
+    <!--edit text for note title-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilEditNoteName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:hint="@string/note_name_hint"
+        android:minHeight="48dp"
+        android:inputType="textMultiLine"
+        android:textColor="@color/white">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tieEditNoteName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="64" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--edit text for note description-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilEditNoteDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tilEditNoteName"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="start|top"
+        android:hint="@string/note_desc_hint"
+        android:minHeight="48dp"
+        android:inputType="textMultiLine"
+        android:singleLine="false"
+        android:textColor="@color/white" >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tieEditNoteDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--text view for displaying Spinner heading-->
+    <TextView
+        android:id="@+id/tvActivation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tilEditNoteDesc"
+        android:layout_alignTop="@id/tilNoteActivation"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:minHeight="48dp"
+        android:text="@string/activation_date_text"
+        android:textColor="@color/black"
+        android:textSize="@dimen/abc_text_size_subhead_material" />
+
+    <!--edit text for activation date-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilNoteActivation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/tvActivation"
+        android:layout_below="@id/tilEditNoteDesc"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:hint="@string/activation_date_hint"
+        android:minHeight="48dp"
+        android:inputType="text"
+        android:textColor="@color/white" >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tieNoteActivation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--button for saving and updating a note-->
+    <DatePicker
+        android:id="@+id/dpActivate"
+        android:background="@color/platinum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tilNoteActivation"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:datePickerMode="spinner"
+        android:calendarViewShown="false" />
+
+    <!--edit text for activation date-->
+    <TextView
+        android:id="@+id/tvVisibilityText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tilNoteActivation"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/abc_text_size_subhead_material"
+        android:text="@string/arddangos_text" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/smVisibility"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvVisibilityText"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/white"
+        android:checked="true" />
+
+    <TextView
+        android:id="@+id/tvHighlightText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/smVisibility"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/abc_text_size_subhead_material"
+        android:text="@string/amlygu_text" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/smHighlight"
+        android:theme="@style/HighlightSwitchTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvHighlightText"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/white"
+        android:checked="false" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        android:text="@string/btn_save"
+        android:textAllCaps="true"
+        android:textColor="@color/white" />
+
+</RelativeLayout>

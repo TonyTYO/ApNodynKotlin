@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    app:cardBackgroundColor="@color/colorPrimary"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="3dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--text view for displaying our note text-->
+        <TextView
+            android:id="@+id/tvNote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/ivDelete"
+            android:padding="2dp"
+            android:layout_marginStart="3dp"
+            android:text="@string/tv_note"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+        <!--text view for displaying extra details-->
+        <TextView
+            android:id="@+id/tvExtra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvNote"
+            android:layout_toStartOf="@id/ivDelete"
+            android:padding="2dp"
+            android:layout_marginStart="3dp"
+            android:text="@string/tv_extra"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+        <!--text view for displaying activation date-->
+        <TextView
+            android:id="@+id/tvActivate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvExtra"
+            android:padding="2dp"
+            android:layout_marginStart="3dp"
+            android:text="@string/tv_activation"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+        <!--text view for displaying last updated date-->
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvActivate"
+            android:padding="2dp"
+            android:layout_marginStart="3dp"
+            android:text="@string/tv_updated_at"
+            android:textColor="@color/white"
+            android:textSize="13sp" />
+
+        <!--switch for visibility-->
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/smVisibility"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvActivate"
+            android:layout_alignBaseline="@id/tvDate"
+            android:layout_alignParentEnd="true"
+            android:text=""
+            android:textSize="13sp" />
+
+        <!--switch for colour-->
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/smColour"
+            android:theme="@style/HighlightSwitchTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ivDelete"
+            android:layout_alignBaseline="@id/tvActivate"
+            android:layout_alignParentEnd="true"
+            android:text=""
+            android:textSize="13sp" />
+
+        <!--imageview for displaying delete icon-->
+        <ImageView
+            android:id="@+id/ivDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginBottom="3dp"
+            android:padding="3dp"
+            android:src="@drawable/ic_baseline_delete_forever_24"
+            android:visibility="visible"
+            app:tint="@color/white"
+            android:contentDescription="@string/im_description" />
+
+        <CheckBox
+            android:id="@+id/ivCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginBottom="3dp"
+            android:padding="3dp"
+            android:checked="false"
+            android:visibility="gone"
+            android:buttonTint="@color/white"/>
+
+    </RelativeLayout>
+
+
+</com.google.android.material.card.MaterialCardView>

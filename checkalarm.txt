@@ -1,0 +1,17 @@
+
+    fun checkAlarm(context: Context) {
+        val intent = Intent(context, StickyNote::class.java)
+        intent.action = SCHEDULED_UPDATE
+        val alarmUp = PendingIntent.getBroadcast(
+            context, ALARM_REQUEST_CODE,
+            intent,
+            PendingIntent.FLAG_NO_CREATE
+        ) != null
+
+        if (alarmUp) {
+            Log.d("myTag", "Alarm is active")
+        }
+        else {
+            Log.d("myTag", "Alarm is not active")
+        }
+    }
